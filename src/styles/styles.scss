@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+    --font-family: 'PT Sans', sans-serif;
+    --second-family: 'Bebas Neue', sans-serif;
+}
+
+.app-container {
+    position: relative;
+    background: #f4f5f9;
+    width: 100%;
+    height: 100vh;
+}
+
+.app-container::before {
+    content: '';
+    position: absolute;
+    top: 65%;
+    left: 320px;
+    width: calc(100% - 480px);
+    height: 1px;
+    background-color: #d5d8df;
+}
+
+.app-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: calc(320px + (calc(100% - 480px) / 2));
+    width: 1px;
+    height: 100%;
+    background-color: #d5d8df;
+}
+
+.left-line {
+    position: absolute;
+    top: 0;
+    left: 320px;
+    width: 1px;
+    height: 100%;
+    background-color: #d5d8df;
+}
+
+.right-line {
+    position: absolute;
+    top: 0;
+    left: calc(100% - 160px);
+    width: 1px;
+    height: 100%;
+    background-color: #d5d8df;
+}
+
+.selector {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: inherit;
+    border: 1px solid #9ba5ba;
+    background: url('../../assets/arrow.svg') no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.selectors {
+    display: flex;
+    align-items: center;
+}
+
+.selectors > div {
+    cursor: pointer;
+}
+
+.switch {
+    padding-left: 23%;
+}
+
+.switch-date {
+    margin-bottom: 15px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    color: #42567a;
+}
+
+.selectors :first-child {
+    margin-right: 20px;
+}
+
+.selectors :last-child {
+    transform: rotate(180deg);
+}
+
+.title {
+    width: 25%;
+    position: absolute;
+    top: 10%;
+    left: 22%;
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 120%;
+    color: #42567a;
+}
+
+.left-line > svg {
+    position: absolute;
+    top: 12%;
+    left: -2px;
+}
+
+.main-date {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 200px;
+    line-height: 80%;
+    letter-spacing: -0.02em;
+    text-align: center;
+    color: #5d5fef;
+    position: absolute;
+    top: 45vh;
+}
+
+.main-date:first-child {
+    left: 26vw;
+}
+
+.main-date:last-child {
+    right: 19vw;
+    color: #ef5da8;
+}
+
+.date-block {
+    display: flex;
+    height: 70%;
+    z-index: 1;
+    position: sticky;
+    pointer-events: none;
+}
+
+.selector {
+    cursor: pointer;
+}
+
+@media (max-width: 1600px) {
+    .main-date {
+        font-size: 100px;
+    }
+
+    .left-line,
+    .right-line {
+        display: none;
+    }
+}
+
+@media (max-width: 1300px) {
+    .title {
+        font-size: 28px;
+    }
+
+    .app-container::after,
+    .app-container::before {
+        display: none;
+    }
+
+    .main-date {
+        top: 15vh;
+    }
+
+    .date-block {
+        height: 200px;
+    }
+
+    .swiper {
+        width: 60% !important;
+        height: 100% !important;
+        position: fixed !important;
+        left: 0 !important;
+        bottom: 90px !important;
+        width: 80% !important;
+        background-color: #f4f5f9 !important;
+    }
+
+    .swiper-button-prev-unique {
+        left: 0vw !important;
+    }
+
+    .swiper-button-next-unique {
+        right: 0vw !important;
+    }
+}
+
+@media (max-width: 1000px) {
+    .title {
+        top: 0;
+    }
+
+    .main-date {
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 425px) {
+    .title {
+        width: 175px;
+        margin-top: 10%;
+        left: 20px;
+    }
+
+    .selector {
+        width: 25px;
+        height: 25px;
+        border-radius: 100%;
+        stroke-width: 1px;
+        stroke: rgba(66, 86, 122, 0.5);
+    }
+
+    .selectors :first-child {
+        margin-right: 9px;
+    }
+
+    .main-date {
+        font-size: 56px;
+        margin-top: 56px;
+    }
+
+    .main-date:first-child {
+        left: 20px;
+    }
+
+    .main-date:last-child {
+        right: 20px;
+    }
+
+    .switch {
+        position: absolute;
+        bottom: 10px;
+        padding-left: 20px;
+    }
+
+    .swiper,
+    .swiper-button-prev-unique,
+    .swiper-button-next-unique {
+        bottom: 310px !important;
+    }
+
+    .swiper-button-next {
+        right: -45px !important;
+        position: absolute !important;
+    }
+
+    .swiper-wrapper {
+        padding-left: 0 !important;
+    }
+
+    .app-container::after,
+    .app-container::before {
+        display: block;
+        height: 1px;
+        width: 90vw;
+        left: 0;
+        margin-left: 5vw;
+    }
+}

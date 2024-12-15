@@ -1,0 +1,25 @@
+.circle {
+    width: 533px;
+    height: 531px;
+    border: 2px solid lightgray; 
+    border-radius: 50%; 
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+}
+
+.point-name {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    color: #42567a;
+    position: fixed;
+    left: 75px;
+}
+
+@media (max-width: 1300px) {
+    .circle {
+        display: none;
+    }
+}
